@@ -17,12 +17,8 @@
                 <br />
                 <p style="text-align:center; font-size: 16px;">
                     
-                    <h:form id="bookForm" style="text-align: center;" >
-                        <h:selectManyCheckbox value="#{bookBean.finalOrder}" converter="#{bookConverter}">
-                            <f:selectItems value="#{bookBean.order}" var="bb" itemLabel="#{bb.title}  
-                                           #{bb.description} #{bb.price}" />
-                        </h:selectManyCheckbox>
-                        <h:commandButton value="Add to Cart" action="cart"/>
+                    <h:form id="cartform" style="text-align: center;" >
+                        <h:outputText value="#{bookBean.order}"></h:outputText>
                     </h:form>
                     
                 </p>
