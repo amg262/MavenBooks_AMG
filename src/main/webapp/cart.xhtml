@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <body>
+
+        <ui:composition template="./mainTemplate.xhtml">
+            
+            <ui:define name="content">
+                <h1 style="text-align:center; font-size: 24px;">
+                    Shopping Cart
+                </h1>
+                <br />
+                <p style="text-align:center; font-size: 16px;">
+                    
+                    <h:form id="bookForm" style="text-align: center;" >
+                        <h:selectManyCheckbox value="#{bookBean.finalOrder}" converter="#{bookConverter}">
+                            <f:selectItems value="#{bookBean.order}" var="bb" itemLabel="#{bb.title}  
+                                           #{bb.description} #{bb.price}" />
+                        </h:selectManyCheckbox>
+                        <h:commandButton value="Add to Cart" action="cart"/>
+                    </h:form>
+                    
+                </p>
+                
+            </ui:define>
+            <!--END OF DEFINE -->
+        </ui:composition>
+
+    </body>
+</html>

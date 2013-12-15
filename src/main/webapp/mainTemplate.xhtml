@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="cssLayout.css" library="css" />
+        <h:outputStylesheet name="default.css" library="css" />
+        <title>Maven Books</title>
+    </h:head>
+
+    <h:body>
+
+        <div id="top">
+            <ui:insert name="top">
+                <ui:include src="/header.xhtml" />
+            </ui:insert>
+        </div>
+        <!-- END OF HEADER -->
+        
+        <div id="content" class="center_content">
+            <ui:insert name="content">Content</ui:insert>
+        </div>
+        <!-- END OF CONTENT -->
+        
+        <div id="bottom">
+            <ui:insert name="bottom">
+                <ui:include src="/footer.xhtml" />
+            </ui:insert>
+        </div>
+        <!-- END OF FOOTER -->
+
+    </h:body>
+
+</html>

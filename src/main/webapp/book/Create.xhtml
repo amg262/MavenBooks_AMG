@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateBookTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateBookLabel_bookID}" for="bookID" />
+                    <h:inputText id="bookID" value="#{bookController.selected.bookID}" title="#{bundle.CreateBookTitle_bookID}" required="true" requiredMessage="#{bundle.CreateBookRequiredMessage_bookID}"/>
+                    <h:outputLabel value="#{bundle.CreateBookLabel_title}" for="title" />
+                    <h:inputText id="title" value="#{bookController.selected.title}" title="#{bundle.CreateBookTitle_title}" />
+                    <h:outputLabel value="#{bundle.CreateBookLabel_description}" for="description" />
+                    <h:inputText id="description" value="#{bookController.selected.description}" title="#{bundle.CreateBookTitle_description}" />
+                    <h:outputLabel value="#{bundle.CreateBookLabel_price}" for="price" />
+                    <h:inputText id="price" value="#{bookController.selected.price}" title="#{bundle.CreateBookTitle_price}" />
+                    <h:outputLabel value="#{bundle.CreateBookLabel_img}" for="img" />
+                    <h:inputText id="img" value="#{bookController.selected.img}" title="#{bundle.CreateBookTitle_img}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{bookController.create}" value="#{bundle.CreateBookSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{bookController.prepareList}" value="#{bundle.CreateBookShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateBookIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

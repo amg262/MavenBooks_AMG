@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewGroup1Title}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewGroup1Label_entryID}"/>
+                    <h:outputText value="#{group1Controller.selected.entryID}" title="#{bundle.ViewGroup1Title_entryID}"/>
+                    <h:outputText value="#{bundle.ViewGroup1Label_username}"/>
+                    <h:outputText value="#{group1Controller.selected.username}" title="#{bundle.ViewGroup1Title_username}"/>
+                    <h:outputText value="#{bundle.ViewGroup1Label_groupname}"/>
+                    <h:outputText value="#{group1Controller.selected.groupname}" title="#{bundle.ViewGroup1Title_groupname}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{group1Controller.destroyAndView}" value="#{bundle.ViewGroup1DestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewGroup1EditLink}"/>
+                <br />
+                <h:commandLink action="#{group1Controller.prepareCreate}" value="#{bundle.ViewGroup1CreateLink}" />
+                <br />
+                <h:commandLink action="#{group1Controller.prepareList}" value="#{bundle.ViewGroup1ShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewGroup1IndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

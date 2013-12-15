@@ -1,0 +1,50 @@
+
+#top {
+    position: relative;
+    background-color: black;
+    padding: 5px 5px 5px 5px;
+    margin: 0px 0px 10px 0px;
+    height:50px;
+}
+
+#bottom {
+    position: relative;
+    background-color: black;
+    padding: 5px 5px 5px 5px;
+    margin: 0px 0px 10px 0px;
+    height:50px;
+}
+
+
+#content {
+    margin: auto;
+    width: 940px;
+    border:1px solid black;
+}
+
+
+.links {
+    margin: auto;
+    float: left;
+    font-size: 24px;
+    color: aqua;
+    padding: 5px 15px 5px 15px;
+}
+
+.center_content {
+    position: relative;
+    background-color: #dddddd;
+    padding: 5px;
+}
+
+#top a:link, #top a:visited {
+  font-weight : bold;
+  text-decoration: none;
+}
+
+#top a:link:hover, #top a:visited:hover  {
+  font-weight : bold;
+  text-decoration : underline;
+}
+
+
