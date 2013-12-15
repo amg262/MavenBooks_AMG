@@ -20,6 +20,9 @@ public class UserFacade extends AbstractFacade<User> {
         return em;
     }
 
+    /**
+     *
+     */
     public UserFacade() {
         super(User.class);
     }

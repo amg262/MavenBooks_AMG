@@ -20,6 +20,9 @@ public class Group1Facade extends AbstractFacade<Group1> {
         return em;
     }
 
+    /**
+     *
+     */
     public Group1Facade() {
         super(Group1.class);
     }

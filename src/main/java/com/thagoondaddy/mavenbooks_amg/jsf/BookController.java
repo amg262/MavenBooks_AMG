@@ -18,6 +18,10 @@ import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.faces.model.SelectItem;
 
+/**
+ *
+ * @author Andy
+ */
 @Named("bookController")
 @SessionScoped
 public class BookController implements Serializable {
@@ -29,9 +33,16 @@ public class BookController implements Serializable {
     private PaginationHelper pagination;
     private int selectedItemIndex;
 
+    /**
+     *
+     */
     public BookController() {
     }
 
+    /**
+     *
+     * @return
+     */
     public Book getSelected() {
         if (current == null) {
             current = new Book();
@@ -44,6 +55,10 @@ public class BookController implements Serializable {
         return ejbFacade;
     }
 
+    /**
+     *
+     * @return
+     */
     public PaginationHelper getPagination() {
         if (pagination == null) {
             pagination = new PaginationHelper(10) {
@@ -61,23 +76,39 @@ public class BookController implements Serializable {
         return pagination;
     }
 
+    /**
+     *
+     * @return
+     */
     public String prepareList() {
         recreateModel();
         return "List";
     }
 
+    /**
+     *
+     * @return
+     */
     public String prepareView() {
         current = (Book) getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         return "View";
     }
 
+    /**
+     *
+     * @return
+     */
     public String prepareCreate() {
         current = new Book();
         selectedItemIndex = -1;
         return "Create";
     }
 
+    /**
+     *
+     * @return
+     */
     public String create() {
         try {
             getFacade().create(current);
@@ -89,12 +120,20 @@ public class BookController implements Serializable {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public String prepareEdit() {
         current = (Book) getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         return "Edit";
     }
 
+    /**
+     *
+     * @return
+     */
     public String update() {
         try {
             getFacade().edit(current);
@@ -106,6 +145,10 @@ public class BookController implements Serializable {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public String destroy() {
         current = (Book) getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
@@ -115,6 +158,10 @@ public class BookController implements Serializable {
         return "List";
     }
 
+    /**
+     *
+     * @return
+     */
     public String destroyAndView() {
         performDestroy();
         recreateModel();
@@ -152,6 +199,10 @@ public class BookController implements Serializable {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public DataModel getItems() {
         if (items == null) {
             items = getPagination().createPageDataModel();
@@ -167,33 +218,64 @@ public class BookController implements Serializable {
         pagination = null;
     }
 
+    /**
+     *
+     * @return
+     */
     public String next() {
         getPagination().nextPage();
         recreateModel();
         return "List";
     }
 
+    /**
+     *
+     * @return
+     */
     public String previous() {
         getPagination().previousPage();
         recreateModel();
         return "List";
     }
 
+    /**
+     *
+     * @return
+     */
     public SelectItem[] getItemsAvailableSelectMany() {
         return JsfUtil.getSelectItems(ejbFacade.findAll(), false);
     }
 
+    /**
+     *
+     * @return
+     */
     public SelectItem[] getItemsAvailableSelectOne() {
         return JsfUtil.getSelectItems(ejbFacade.findAll(), true);
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     public Book getBook(java.lang.Integer id) {
         return ejbFacade.find(id);
     }
 
+    /**
+     *
+     */
     @FacesConverter(forClass = Book.class)
     public static class BookControllerConverter implements Converter {
 
+        /**
+         *
+         * @param facesContext
+         * @param component
+         * @param value
+         * @return
+         */
         @Override
         public Object getAsObject(FacesContext facesContext, UIComponent component, String value) {
             if (value == null || value.length() == 0) {
@@ -216,6 +298,13 @@ public class BookController implements Serializable {
             return sb.toString();
         }
 
+        /**
+         *
+         * @param facesContext
+         * @param component
+         * @param object
+         * @return
+         */
         @Override
         public String getAsString(FacesContext facesContext, UIComponent component, Object object) {
             if (object == null) {
