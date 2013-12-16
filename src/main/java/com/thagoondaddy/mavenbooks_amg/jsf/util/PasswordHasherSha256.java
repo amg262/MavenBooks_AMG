@@ -1,5 +1,5 @@
 
-package com.thagoondaddy.mavenbooks_amg.model;
+package com.thagoondaddy.mavenbooks_amg.jsf.util;
 
 
 import com.google.common.base.Charsets;
@@ -10,11 +10,16 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 /**
  *
+ * Utility class that is used to encrypt passwords (or any text).
+ * Uses sha-256 bit encryption method that can be called to encrypt 
+ * password before writing it to DB
+ * 
+ * 
  * @author Andrew Gunn | amgunn1@hotmail.com
  */
 @Named
 @SessionScoped
-public class PasswordHasher implements Serializable {
+public class PasswordHasherSha256 implements Serializable {
     
     /**
      *
@@ -35,7 +40,7 @@ public class PasswordHasher implements Serializable {
     }
     
 //    public static void main(String[] args) {
-//        PasswordHasher ph = new PasswordHasher();
+//        PasswordHasherSha256 ph = new PasswordHasherSha256();
 //        ph.generateHash("hashcode");
 //    }
 }

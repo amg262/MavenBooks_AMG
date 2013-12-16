@@ -6,6 +6,14 @@ import javax.persistence.EntityManager;
 
 /**
  *
+ * Abstract facade class that contains all the CRUD methods that will be
+ * inherited by specific entity classes, allowing this abstract class
+ * to contain all the methods thosde classes will use.
+ * 
+ * While there is some rigidity due to code inheritance, I chose to save
+ * time and reuse code in this situation due to the similar needs of those
+ * classes.
+ * 
  * @param <T> 
  * @author Andrew Gunn | amgunn1@hotmail.com
  */
@@ -14,6 +22,8 @@ public abstract class AbstractFacade<T> {
 
     /**
      *
+     * Constructor that exceptions a generic class as an argument
+     * 
      * @param entityClass
      */
     public AbstractFacade(Class<T> entityClass) {
@@ -22,12 +32,16 @@ public abstract class AbstractFacade<T> {
 
     /**
      *
-     * @return
+     * Each class that extend will implement this, allows all CRUD to be done
+     * 
+     * @return entity manager
      */
     protected abstract EntityManager getEntityManager();
 
     /**
      *
+     * Method other entity facades will inherit to Create a new entity
+     * 
      * @param entity
      */
     public void create(T entity) {
@@ -36,6 +50,8 @@ public abstract class AbstractFacade<T> {
 
     /**
      *
+     * Method other entity facades will inherit to Edit a new entity
+     * 
      * @param entity
      */
     public void edit(T entity) {
@@ -44,6 +60,8 @@ public abstract class AbstractFacade<T> {
 
     /**
      *
+     * Method other entity facades will inherit to Destroy a new entity
+     * 
      * @param entity
      */
     public void remove(T entity) {
@@ -51,17 +69,23 @@ public abstract class AbstractFacade<T> {
     }
 
     /**
-     *
+     * 
+     * Method other entity facades will inherit to Find an entity
+     * Will search by ID, uses generic
+     * 
      * @param id
-     * @return
+     * @return getEntityManager().find(entityClass, id);
      */
     public T find(Object id) {
         return getEntityManager().find(entityClass, id);
     }
 
     /**
-     *
-     * @return
+     * 
+     * Method other entity facades will inherit to Find all entites
+     * Uses generic
+     * 
+     * @return getEntityManager().createQuery(cq).getResultList();
      */
     public List<T> findAll() {
         javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
@@ -71,8 +95,10 @@ public abstract class AbstractFacade<T> {
 
     /**
      *
+     * Finds range of records based on the passed in integer
+     * 
      * @param range
-     * @return
+     * @return q.getResultList();
      */
     public List<T> findRange(int[] range) {
         javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
@@ -85,7 +111,9 @@ public abstract class AbstractFacade<T> {
 
     /**
      *
-     * @return
+     * Counts the amount of records present
+     * 
+     * @return ((Long) q.getSingleResult()).intValue();
      */
     public int count() {
         javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();

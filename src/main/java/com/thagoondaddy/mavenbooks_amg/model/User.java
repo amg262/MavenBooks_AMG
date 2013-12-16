@@ -16,6 +16,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
+ * Entity class that was generated from an existing database table. Contains
+ * all necessary named queries, annotations regarding Entity class, table name,
+ * identifier, columns and their lengths as well as all the methods used to
+ * manipulate the data in the particular entity table.
+ * 
  * @author Andrew Gunn | amgunn1@hotmail.com
  */
 @Entity
@@ -56,7 +61,9 @@ public class User implements Serializable {
 
     /**
      *
-     * @return
+     * Access method for ID key in entity
+     * 
+     * @return userID
      */
     public Integer getUserID() {
         return userID;
@@ -64,15 +71,22 @@ public class User implements Serializable {
 
     /**
      *
+     * Mutator method for ID key in entity
+     * 
      * @param userID
      */
     public void setUserID(Integer userID) {
+        if (userID == null) {
+            throw new NullPointerException();
+        } else {
         this.userID = userID;
-    }
+    }}
 
     /**
      *
-     * @return
+     * Access method for username field in Entity
+     * 
+     * @return username
      */
     public String getUsername() {
         return username;
@@ -80,15 +94,22 @@ public class User implements Serializable {
 
     /**
      *
+     * Mutator method for username field in entity
+     * 
      * @param username
      */
     public void setUsername(String username) {
+        if (username == null || username.isEmpty()) {
+            throw new NullPointerException();
+        } else {
         this.username = username;
-    }
+    }}
 
     /**
      *
-     * @return
+     * Mutator method for password field in entity
+     * 
+     * @param password
      */
     public String getPassword() {
         return password;
@@ -96,15 +117,22 @@ public class User implements Serializable {
 
     /**
      *
-     * @param password
+     * Mutator method for username field in entity
+     * 
+     * @param username
      */
     public void setPassword(String password) {
+        if (password == null || password.isEmpty()) {
+            throw new NullPointerException();
+        } else {
         this.password = password;
-    }
+    }}
 
     /**
      *
-     * @return
+     * Hash code method for entryID field
+     * 
+     * @return hash
      */
     @Override
     public int hashCode() {
@@ -115,8 +143,10 @@ public class User implements Serializable {
 
     /**
      *
+     * Equals method for matching userID
+     * 
      * @param object
-     * @return
+     * @return boolean
      */
     @Override
     public boolean equals(Object object) {
@@ -133,7 +163,7 @@ public class User implements Serializable {
 
     /**
      *
-     * @return
+     * @return toString()
      */
     @Override
     public String toString() {

@@ -16,6 +16,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
+ * Entity class that was generated from an existing database table. Contains
+ * all necessary named queries, annotations regarding Entity class, table name,
+ * identifier, columns and their lengths as well as all the methods used to
+ * manipulate the data in the particular entity table.
+ * 
  * @author Andrew Gunn | amgunn1@hotmail.com
  */
 @Entity
@@ -56,7 +61,9 @@ public class Group1 implements Serializable {
 
     /**
      *
-     * @return
+     * Access method for ID key in entity
+     * 
+     * @return entryID
      */
     public Integer getEntryID() {
         return entryID;
@@ -64,15 +71,22 @@ public class Group1 implements Serializable {
 
     /**
      *
+     * Mutator method for ID key in entity
+     * 
      * @param entryID
      */
     public void setEntryID(Integer entryID) {
+        if (entryID == null) {
+            throw new NullPointerException();
+        } else {
         this.entryID = entryID;
-    }
+    }}
 
     /**
      *
-     * @return
+     * Access method for username field in Entity
+     * 
+     * @return username
      */
     public String getUsername() {
         return username;
@@ -80,15 +94,22 @@ public class Group1 implements Serializable {
 
     /**
      *
+     * Mutator method for username field in entity
+     * 
      * @param username
      */
     public void setUsername(String username) {
+        if (username == null || username.isEmpty()) {
+            throw new NullPointerException();
+        } else {
         this.username = username;
-    }
+    }}
 
     /**
      *
-     * @return
+     * Mutator method for title field in entity
+     * 
+     * @return groupname
      */
     public String getGroupname() {
         return groupname;
@@ -96,15 +117,22 @@ public class Group1 implements Serializable {
 
     /**
      *
+     * Access method for title field in Entity
+     * 
      * @param groupname
      */
     public void setGroupname(String groupname) {
+        if (groupname == null || groupname.isEmpty()) {
+            throw new NullPointerException();
+        } else {
         this.groupname = groupname;
-    }
+    }}
 
     /**
      *
-     * @return
+     * Hash code method for entryID field
+     * 
+     * @return hash
      */
     @Override
     public int hashCode() {
@@ -115,8 +143,10 @@ public class Group1 implements Serializable {
 
     /**
      *
+     * Equals method for matching entryIDs
+     * 
      * @param object
-     * @return
+     * @return boolean
      */
     @Override
     public boolean equals(Object object) {
@@ -133,7 +163,7 @@ public class Group1 implements Serializable {
 
     /**
      *
-     * @return
+     * @return toString()
      */
     @Override
     public String toString() {

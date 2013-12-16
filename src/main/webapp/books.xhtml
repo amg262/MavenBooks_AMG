@@ -18,25 +18,16 @@
                 <p style="text-align:center; font-size: 16px;">
                     
                     <h:form id="bookForm" style="text-align: center;" >
-                        <h:selectManyCheckbox value="#{bookBean.order}" converter="#{bookConverter}">
-                            <f:selectItems value="#{bookBean.allBooks}" var="b" itemLabel="#{b.title}" />
+                        <h:selectManyCheckbox value="#{bookController.order}" converter="#{bookConverter}">
+                            <f:selectItems value="#{bookController.allBooks}" var="b" itemLabel="#{b.title}" />
                         </h:selectManyCheckbox>
                         <h:commandButton value="Add to Cart" action="cart"/>
                     </h:form>
                 </p>
                 <p>
-                    <h:outputText value="#{bookBean.order}"></h:outputText>
-                    <h:form id="orderForm" style="text-align: center;" >
-                        <h:dataTable value="#{bookBean.order}" var="book">
-                            <h:column>
-                                #{book}
-                            </h:column>
-                            <h:column>
-                                
-                            </h:column>
-                        </h:dataTable>
-                        <h:commandButton value="Order" action="order"/>
-                    </h:form>
+                   
+                    <h:outputText value="#{bookController.order}"></h:outputText>
+                    
                 </p>
             </ui:define>
             <!--END OF DEFINE -->

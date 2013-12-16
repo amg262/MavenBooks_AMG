@@ -5,6 +5,9 @@ import java.util.List;
 
 /**
  *
+ * Custom generated exception for IllegalOrphan instances. Customized helps
+ * understand where problem could lie in JPA/JSF
+ * 
  * @author Andy
  */
 public class IllegalOrphanException extends Exception {
@@ -23,8 +26,10 @@ public class IllegalOrphanException extends Exception {
         }
     }
     /**
+     * 
+     * Method that returns messages variable
      *
-     * @return
+     * @return messages
      */
     public List<String> getMessages() {
         return messages;

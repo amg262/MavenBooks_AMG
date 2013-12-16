@@ -9,6 +9,7 @@ import javax.faces.model.SelectItem;
 
 /**
  *
+ * 
  * @author Andy
  */
 public class JsfUtil {
@@ -78,7 +79,7 @@ public class JsfUtil {
     /**
      *
      * @param key
-     * @return
+     * @return String
      */
     public static String getRequestParameter(String key) {
         return FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get(key);
@@ -89,7 +90,7 @@ public class JsfUtil {
      * @param requestParameterName
      * @param converter
      * @param component
-     * @return
+     * @return Object
      */
     public static Object getObjectFromRequestParameter(String requestParameterName, Converter converter, UIComponent component) {
         String theId = JsfUtil.getRequestParameter(requestParameterName);

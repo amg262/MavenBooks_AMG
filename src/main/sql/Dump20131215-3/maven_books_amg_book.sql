@@ -31,7 +31,7 @@ CREATE TABLE `book` (
   `Price` varchar(255) DEFAULT NULL,
   `Img` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`BookID`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `book` (
 
 LOCK TABLES `book` WRITE;
 /*!40000 ALTER TABLE `book` DISABLE KEYS */;
-INSERT INTO `book` VALUES (1,'Java For Dumies','Java language programming','29.99','http://images.amazon.com/images/P/0764526464.01.LZZZZZZZ.jpg'),(2,'Beginning Database Design','learning database concepts','29.99','http://img2.imagesbn.com/images/179650000/179651698.JPG'),(3,'The Science of Good Cooking','learning to cook good','19.99','http://farm9.staticflickr.com/8384/8500233213_89660f5979.jpg'),(4,'Joy of Cooking','having fun cooking','17.85','http://ecx.images-amazon.com/images/I/51ovtQ4OTVL.jpg'),(5,'The Sports Gene','brain behind the athlete','21.25','http://cdni.condenast.co.uk/262x393/s_v/Sports-Gene-GQ-16Sep13-b_262x393.jpg'),(6,'Sports Illustrated Almanac 2013','almanac for sports','18.52','http://img1.imagesbn.com/p/9781603209342_p0_v2_s260x420.JPG');
+INSERT INTO `book` VALUES (1,'Java For Dumies','Java language programming','29.99','http://images.amazon.com/images/P/0764526464.01.LZZZZZZZ.jpg'),(2,'Beginning Database Design','learning database concepts','29.99','http://img2.imagesbn.com/images/179650000/179651698.JPG'),(3,'The Science of Good Cooking','learning to cook good','19.99','http://farm9.staticflickr.com/8384/8500233213_89660f5979.jpg'),(4,'Joy of Cooking','having fun cooking','17.85','http://ecx.images-amazon.com/images/I/51ovtQ4OTVL.jpg'),(5,'The Sports Gene','brain behind the athlete','21.25','http://cdni.condenast.co.uk/262x393/s_v/Sports-Gene-GQ-16Sep13-b_262x393.jpg'),(6,'Sports Illustrated Almanac 2013','almanac for sports','18.52','http://img1.imagesbn.com/p/9781603209342_p0_v2_s260x420.JPG'),(8,'added from view','new book','19.95','null url');
 /*!40000 ALTER TABLE `book` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-12-15 13:04:42
+-- Dump completed on 2013-12-15 17:19:55
