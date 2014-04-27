@@ -19,15 +19,13 @@
                     
                     <h:form id="bookForm" style="text-align: center;" >
                         <h:selectManyCheckbox value="#{bookController.order}" converter="#{bookConverter}">
-                            <f:selectItems value="#{bookController.allBooks}" var="b" itemLabel="#{b.title}" />
+                            <f:selectItems value="#{bookController.allBooks}" var="b" itemValue="#{b}" itemLabel="#{b.title} #{b.price}" />
                         </h:selectManyCheckbox>
                         <h:commandButton value="Add to Cart" action="cart"/>
                     </h:form>
                 </p>
                 <p>
-                   
                     <h:outputText value="#{bookController.order}"></h:outputText>
-                    
                 </p>
             </ui:define>
             <!--END OF DEFINE -->

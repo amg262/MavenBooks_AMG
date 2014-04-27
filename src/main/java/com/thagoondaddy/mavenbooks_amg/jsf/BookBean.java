@@ -6,6 +6,7 @@ import com.thagoondaddy.mavenbooks_amg.jsf.util.PaginationHelper;
 import com.thagoondaddy.mavenbooks_amg.ejb.BookFacade;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.ResourceBundle;
 import javax.ejb.EJB;
@@ -356,4 +357,40 @@ public class BookBean implements Serializable {
     public void setOrder(List<Book> order) {
         this.order = order;
     }
+    
+    
+    /**
+     * 
+     * Method used for getting the final bill of order
+     * 
+     * @return total
+     */
+    public double getBill(){
+        double total = 0;
+        for (Book b : order){
+            total += b.getPrice();
+        }
+        return total;
+    }
+    
+    /**
+     * 
+     * returns bill and tax combined (final bill)
+     * 
+     * @return bill + tax
+     */
+    public double getTaxAndBill(){
+        return getBill() * .05;
+    }
+    
+    /**
+     * 
+     * Sends you to confirmation page if good
+     * 
+     * @return confirmation
+     */
+    public String processOrder(){
+        return "confirmation";
+    }
+
 }

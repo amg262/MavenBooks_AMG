@@ -16,11 +16,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * Entity class that was generated from an existing database table. Contains
- * all necessary named queries, annotations regarding Entity class, table name,
- * identifier, columns and their lengths as well as all the methods used to
- * manipulate the data in the particular entity table.
- * 
  * @author Andrew Gunn | amgunn1@hotmail.com
  */
 @Entity
@@ -46,148 +41,60 @@ public class Book implements Serializable {
     @Size(max = 255)
     @Column(name = "Description")
     private String description;
-    @Size(max = 255)
+    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "Price")
-    private String price;
+    private Double price;
     @Size(max = 255)
     @Column(name = "Img")
     private String img;
 
-    /**
-     *
-     */
     public Book() {
     }
 
-    /**
-     *
-     * @param bookID
-     */
     public Book(Integer bookID) {
         this.bookID = bookID;
     }
 
-    /**
-     *
-     * Access method for ID key in entity
-     * 
-     * @return bookID
-     */
     public Integer getBookID() {
         return bookID;
     }
 
-    /**
-     *
-     * Mutator method for ID key in entity
-     * 
-     * @param bookID
-     */
     public void setBookID(Integer bookID) {
-        if (bookID == null) {
-            throw new NullPointerException();
-        } else {
         this.bookID = bookID;
-    }}
+    }
 
-    /**
-     *
-     * Access method for title field in Entity
-     * 
-     * @return title
-     */ 
     public String getTitle() {
         return title;
     }
 
-    /**
-     *
-     * Mutator method for title field in entity
-     * 
-     * @param title
-     */
     public void setTitle(String title) {
-        if (title == null || title.isEmpty()) {
-            throw new NullPointerException();
-        } else {
         this.title = title;
-    }}
+    }
 
-    /**
-     *
-     * Accessor method for description field of entity
-     * 
-     * @return description
-     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     *
-     * Mutator method of description field of entity
-     * 
-     * @param description
-     */
     public void setDescription(String description) {
-        if (description == null || description.isEmpty()) {
-            throw new NullPointerException();
-        } else {
         this.description = description;
-    }}
+    }
 
-    /**
-     * 
-     * Accessor method for price field in entity
-     *
-     * @return price
-     */
-    public String getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    /**
-     *
-     * Mutator method for price field in entity
-     * 
-     * @param price
-     */
-    public void setPrice(String price) {
-        if (price == null) {
-            throw new NullPointerException();
-        } else {
+    public void setPrice(Double price) {
         this.price = price;
-    }}
+    }
 
-    /**
-     *
-     * Mutator method for Img url for entity
-     * 
-     * @return img
-     */
     public String getImg() {
         return img;
     }
 
-    /**
-     *
-     * Mutator method for img url of entity
-     * 
-     * @param img
-     */
     public void setImg(String img) {
-        if (img == null) {
-            throw new NullPointerException();
-        } else {
         this.img = img;
-    }}
+    }
 
-    /**
-     *
-     * Hash code method for bookID field
-     * 
-     * @return hash
-     */
     @Override
     public int hashCode() {
         int hash = 0;
@@ -195,13 +102,6 @@ public class Book implements Serializable {
         return hash;
     }
 
-    /**
-     *
-     * Equals method for matching bookIDs
-     * 
-     * @param object
-     * @return boolean
-     */
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
@@ -215,15 +115,9 @@ public class Book implements Serializable {
         return true;
     }
 
-    /**
-     *
-     * Overridden tosTring
-     * 
-     * @return String
-     */
     @Override
     public String toString() {
-        return bookID + " " + title + " " + description + " " + price;
+        return "com.thagoondaddy.mavenbooks_amg.model.Book[ bookID=" + bookID + " ]";
     }
 
 }

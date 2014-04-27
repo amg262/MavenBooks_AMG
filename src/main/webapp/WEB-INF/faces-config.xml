@@ -9,4 +9,39 @@
             <var>bundle</var>
         </resource-bundle>
     </application>
+    <managed-bean>
+        <managed-bean-name>Group1Bean</managed-bean-name>
+        <managed-bean-class>com.thagoondaddy.mavenbooks_amg.jsf.Group1Bean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    <managed-bean>
+        <managed-bean-name>BookBean</managed-bean-name>
+        <managed-bean-class>com.thagoondaddy.mavenbooksfinal.jsf.BookBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    <managed-bean>
+        <managed-bean-name>UserBean</managed-bean-name>
+        <managed-bean-class>com.thagoondaddy.mavenbooksfinal.jsf.UserBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    <managed-bean>
+        <managed-bean-name>BookConverter</managed-bean-name>
+        <managed-bean-class>com.thagoondaddy.mavenbooksfinal.jsf.BookBeanConverter</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    <managed-bean>
+        <managed-bean-name>BookConverter</managed-bean-name>
+        <managed-bean-class>com.thagoondaddy.mavenbooksfinal.jsf.UserBeanConverter</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    <managed-bean>
+        <managed-bean-name>BookConverter</managed-bean-name>
+        <managed-bean-class>com.thagoondaddy.mavenbooksfinal.jsf.Group1BeanConverter</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
 </faces-config>

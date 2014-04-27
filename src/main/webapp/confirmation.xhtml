@@ -3,8 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <body>
 
@@ -12,20 +11,18 @@
             
             <ui:define name="content">
                 <h1 style="text-align:center; font-size: 24px;">
-                    Shopping Cart
+                    Welcome to the store!
                 </h1>
                 <br />
                 <p style="text-align:center; font-size: 16px;">
-                    
-                    <h:form id="cartform" style="text-align: center;" >
-                        <h:outputText value="#{bookController.order}"></h:outputText>
-                        <h:commandButton value="Order" action=""#{bookController.processOrder()} />
+                    <h:graphicImage name="bookstore.jpg" library="images" />
+                    <p></p>
+                    <h:form style="text-align: center;" >
+                        Thank you for your order!
                     </h:form>
-                    
                 </p>
-                
             </ui:define>
-            <!--END OF DEFINE -->
+            
         </ui:composition>
 
     </body>
